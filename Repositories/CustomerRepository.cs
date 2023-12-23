@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
+using RestApi.Models;
+using RestApi.Repositories;
 
 namespace WarehouseMVC.Infrastructure.Repositories 
 {
@@ -8,10 +11,10 @@ namespace WarehouseMVC.Infrastructure.Repositories
     {
         public IQueryable<Customer> GetAllActiveCustomers()
         {
-                throw new NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        public CustomerRepository getCustomer(int customerId)
+        public Customer GetCustomer(int customerId)
         {
             throw new NotImplementedException();
         }

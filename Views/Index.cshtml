@@ -1,0 +1,25 @@
+
+@page
+@using MyExampleProject.Models
+@model IndexModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h2>Welcome to Our Site</h2>
+<p>This is the home page of our example site.</p>
+<div>Welcome</div>
+<p>Learn more</p>
+
+@section Scripts {
+    <script>
+        // jQuery AJAX call to fetch data from the WeatherForecast API
+        $.ajax({
+            url: "https://localhost:5254/WeatherForecast",
+            success: function (result) {
+                // Logging the result to the console
+                console.log(result);
+            }
+        });
+    </script>
+}

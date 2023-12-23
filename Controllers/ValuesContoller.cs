@@ -13,7 +13,7 @@ namespace MovieManagement.Api.Controllers
 {
 
     [ApiController]
-    [Route("[api/values]")]
+    [Route("api/values")]
     public class ValuesController : ControllerBase
     {
         // GET: api/products
@@ -26,7 +26,8 @@ namespace MovieManagement.Api.Controllers
         {
             return await Task.FromResult(new List<string>());
         }
-        public IEnumerable<Product> Get()
+        [HttpGet("products")]
+        public IEnumerable<Product> GetProducts()
         {
             // Pobierz wszystkie produkty
             return new List<Product>();
@@ -34,7 +35,7 @@ namespace MovieManagement.Api.Controllers
 
         // GET: api/products/5
         [HttpGet("{id}")]
-        public Product? Get(int id)
+        public Product? GetProduct(int id)
         {
             // Pobierz produkt o danym ID
             return null;

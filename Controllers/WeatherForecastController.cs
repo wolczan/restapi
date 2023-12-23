@@ -1,9 +1,12 @@
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+
 
 namespace RestApi.Controllers;
 
 [ApiController]
-[Route("api/v1/weather-forecast")]
+[Route("api/v1/weather-forecasts")]   // "[controller]"
+[EnableCors("MyallowSpecificorigins")]
 public class WeatherForecastController : ControllerBase
 {
     private static readonly string[] Summaries = new[]
@@ -18,7 +21,7 @@ public class WeatherForecastController : ControllerBase
         _logger = logger;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
+    [HttpGet(Name = "GetWeatherForecastV1")]
     public IEnumerable<WeatherForecast> Get(HttpRequestMessage request)
     {
         
